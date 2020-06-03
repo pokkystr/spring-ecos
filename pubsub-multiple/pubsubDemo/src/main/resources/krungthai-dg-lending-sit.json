@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "krungthai-dg-lending-sit",
+  "private_key_id": "91eba027f1bc86e427f563d4cf2cd7f36616447b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC6xGMEWosV6r7R\nrcWzI7G8k9SBoGDY3Dq8FZxNNS4pw71B0Jg8Nz78the8XvrQMeopg5t5n8vVBD/d\nYDFaEO8Svd1cjnNUWlXwZuuBZXSU4cTDVAtEp7b54Ni1pLIicQ60UmLP+lu6067H\nzqYKyZ1k1QyIlxmOOgaz0ZkSwn599jbvr5Qn7SU+3v7QjiaUOdaDcmYscamPIaiq\niaCLKNEuHqe0mAO39WIvl2YUDvdHrig/MUTEsbw58CUgXA8xAxUNriVkNnuZVT+J\nGebkH6r7yyQddk7QRbSS4uibikBSw7z/p8f9eWaOdNwko/aPRjbnIKsImV+P9AHa\nFNVxxLYrAgMBAAECggEAXPneNzEh82e41eZVuK/oz/GiBWQDQoIkRTTW6kKyt/zn\nLyf6WWPBWgoGd/KqltF6em83i40m6mUirACyoN00PxbA585MkK4mATcjP3fz2Rgp\nnXmt4GBDwVKTX53dRjMVOGSZJ2NBnhi6dmKkG1OyJJvBERBzmu+9HXCW7RVg5jA9\n4XbRRXxu4DDX7OJDfFLkiZD7FS6wgdgdMx496IaJ94SpqFZd2SeXybE6HMeUKKbF\nyHJGHQ43ztIeI0ySB5+tstiUuhz5PTxIUAWDfvvZf53kehBeAoNjo1gKt2muxXCz\nPtg7p1s3PGzPVkpw8HAiI/ywKnuBHBpPBTTZfNasQQKBgQDiieEmSuWzaul+4Cmo\npi2r6cYSQ66zD1hbHyFObB6mno9sd9H2IN8S4HHn4caJSZzRuErFruKhpN3hRLr1\nzP+8FphrsDvWxTxLnCOtUXsj+nMFbfq5EKooNiDuA6WHmPqPf2ax8Pc2w/IyElE7\neL2JUANfczv85nbuQ6W+9wJjwQKBgQDTDma58R5mqUeMDGtQyZ3aERk+3gJyzBkE\nM0pWsJdPtc2MQvno80EI/UpVmhOZTNImT8kGJ4UoiIZySHrdKpP9WQo3vulp8R84\nzwpC1/gD/I0AXtIY6d7M7iyCEc6lyHOP0J2YCgu0tDK7j5eiVjhvGU2TBo8PyAE2\ncjYFj4wk6wKBgQCC9lCp8XyPV4w6495ReBhJHTF7l5MkQwfCTeHUU1741gt2GmLQ\nFjq/z+8prXU4Is081HytgafU6Nm4hCJNPUDOfIWLI+vEAmwUDeT2Kne02fGqvuTG\nHiMwcfJhhswn8sFPOcilr/dKusaGOd6qMefovM/mW1jfoGA65/KmzmecQQKBgQCk\nyrLU7nqBSB1wMWY9jx7sXLtsheY9gjTqPa4GoB2VBGv433bIN98IyNSYoBQ7d2sC\ntPtODd9/tZHce9FLDOq+Px6mRi90I+vv7GCjroOdgT0LE/5Rq5HmSvV/na3PbgMl\nQIs8YmOfda/DGSwZed7YiFY0vUNI3C5uN6EMmHehfwKBgBzRCEtx7iyJCdtsCvrJ\nUES/fjqAAgYPp9elfwdO0WyvXBmI6A2A8amI0EjbtCqu2mSojYbA8e4PrMYirFpb\nP0KYfH8a0EjM0qKjOm2Avew3iQfuEiQmGn5jvBGvXMyu2VAKCoXh5gOqcjjJrRJh\nEd9XImp9wu7fsoud7ERj44V1\n-----END PRIVATE KEY-----\n",
+  "client_email": "ktb-dg-lending-sit-pubsub@krungthai-dg-lending-sit.iam.gserviceaccount.com",
+  "client_id": "107066499704459778766",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ktb-dg-lending-sit-pubsub%40krungthai-dg-lending-sit.iam.gserviceaccount.com"
+}
