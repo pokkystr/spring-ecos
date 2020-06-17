@@ -1,0 +1,13 @@
+logging:
+  level:
+    root: info
+
+gcp:
+  project-id: krungthai-dg-lending-sit
+  pubsub:
+    topic: projects/krungthai-dg-lending-dev/topics/sample.response
+    credentials:
+      location: file:/Users/pigke/IdeaProjects/github-demo/spring-echo/GCP-PubSub/singlePubSub/src/main/resources/krungthai-dg-lending-sit.json
+
+server:
+  port: 8089
