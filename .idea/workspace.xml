@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d525665f-46ce-4fa2-9430-245b1b364033" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/gcpPubSub/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gcpPubSub/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gcpPubSub/src/main/java/com/mydeveloperplanet/mygcppubplanet/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gcpPubSub/src/main/java/com/mydeveloperplanet/mygcppubplanet/MessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gcpPubSub/src/main/java/com/mydeveloperplanet/mygcppubplanet/MyGcpPubPlanetApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gcpPubSub/src/main/java/com/mydeveloperplanet/mygcppubplanet/MyGcpPubPlanetApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gcpPubSub/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gcpPubSub/src/test/java/com/mydeveloperplanet/mygcppubplanet/MyGcpPubPlanetApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/gcpPubSub/src/test/java/com/mydeveloperplanet/mygcppubplanet/MyGcpPubPlanetApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1dS4rKpiXdzhdRUaLcMPFDGnXsv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d525665f-46ce-4fa2-9430-245b1b364033" name="Default Changelist" comment="" />
+      <created>1592405357200</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592405357200</updated>
+    </task>
+    <servers />
+  </component>
+</project>

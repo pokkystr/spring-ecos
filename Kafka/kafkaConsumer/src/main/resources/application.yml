@@ -1,0 +1,8 @@
+spring:
+  kafka:
+    consumer:
+      max-poll-records: 100
+      fetch-max-wait: 100
+      enable-auto-commit: true
+    bootstrap-servers:
+      - localhost:9092
