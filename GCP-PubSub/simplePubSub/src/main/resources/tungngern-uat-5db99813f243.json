@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "tungngern-uat",
+  "private_key_id": "5db99813f24300fbee8b9ea4f8cb0763238e8713",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQClQHTC1ZKXvEDD\nI3CT+/GEZ5GV0ytfLjXmRHC5fhPKIjw4X9cRL7Y6/40TzQsIsdddfsj5KAwaUgbO\nJV1XKdw6IcuDNZp+35t1pBT7amBXNaTyRGDag0rYeFtfn/DUJgthEziGz3IiNaB1\nNMLVicCaq+UvO0kr85jNaZCpMXUh+gTsCnWBessLbzhVNvp4dBf73uHUUweAiC3B\nuTTw+kMvt/jxId+1XFpEXuUdRRYgQgW+u4qQxwTumOcSgLX8a4hXTBw+JwxhxKUT\nsHnggpMw80Gtx8voig2Uk8ofvb3SeBtANmhsuPvVH3UCkCyXdSYSmG0uDwhBnyU9\nYuCM3XzhAgMBAAECggEABSCsstQ81QyeS5POoSfl3s52JvKPT6fz3BQa9ZWE/I5f\nBR6LskzDRD3EYVU5Ir0edjgqOSl6BSnPDF/eT2dlDhB5A7Zyx52tgassi7/ZcxFO\n/8W5heRBqvmCl9MzHkkbLKkjlZLLq0Yz1zkys7yvU1lSvmpB9y07DEIqnwZh6KLA\nNwtdpHc30+3rPibqVL2LcWk8VGdXS+ZTXYzfNjOR/e2COdz6mQTuzt4Kqnrzj5HL\nsOMoSD9/Z36zTddfU2LRzB7HYGD9uO3MR+vDxMVC4H+7lDgI1FCFBSkPX+Cs6Im0\n2nmB7MxOxyuwDBJsdHFTfqUbKHChVb2GPhglwB2lAQKBgQDQMI4zOltMhwkQM3j4\nV3MiSskH1yFtRcCGysu9VAfz4vHzvVsMbvd02iX+0UeGDSe7SLmXFbHACcpeKMOx\nWUBt3F+RWXiPlC3yrLvn6NwZGzYyPJ/geudbYnKFsx8ENShhM1X1KcdNJHjyg4HW\nJcja5c+zLNiQlkawfrpbnvHZYQKBgQDLM5Zrgu3jmhtvxsTE33ir3UPdUsCLywYP\nGtauGvCqJMfTikBTzGXAe/e7oEfs9hB6arJkeghq03/zhs7Vcbs8uqkhVyVL+ghA\nnpuLPF+LWpPIdJh/DODpxKkkhQkwmTaoSQVxO4DOjNb7ADhfcjI+65faG60AyvQA\nACxFq1TTgQKBgQDPql9twhwn7dqgind0YOa7ohV8+J6jPRyaV9d690Mnh40JMCyN\n7nJv4Npdn6vUj3K+YgCeMEmp4Ro3ajopwXl/HH9HoROdRJXAp4SYA7LoaDhbTBW9\n+Vql0UGjE9UwgUXSDz8C2bWvwV3TqlHspqv/jZTsiSNMtlm02/RQR+++gQKBgGWP\n3zrVMfl0aQoxGuAbocCk0uqoFbzJOLoL/AkBRhCEWawNiaFYo/LVAzkwH0L8qbfF\n5Gv74oEiPO2HD5H3SlJMKYSUffu/eKhzneK1xjtshjjGrgGyeifdN30dUT6NFZh/\nBs1VpEeYdUr3DTYHab2xGzDUbF/dEJ9/dqFLxRYBAoGBAMEHflziZUXxKhB/5JGd\nO/rKFbdh2zPM20SVGZ7Gfxy3u4TEWhhryHZhY3LAhpXDf/NNA4fLwf++/r74fpK9\neteFB4CpyL0K1zS0NfF5JVo7obTSo52W1aSFkBRjX+gzGw70PPcH+v4kx0xNl0TD\nflFl7JFxdVz4FDkylISfIMNI\n-----END PRIVATE KEY-----\n",
+  "client_email": "tungngern-uat@appspot.gserviceaccount.com",
+  "client_id": "108436609914954986213",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/tungngern-uat%40appspot.gserviceaccount.com"
+}
