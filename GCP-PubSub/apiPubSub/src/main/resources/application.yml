@@ -1,0 +1,21 @@
+logging:
+  level:
+    root: info
+server:
+  port: 8081
+
+gcp:
+  pubsub:
+    credential:
+      location: src/main/resources/service-account.json
+    topics: https://pubsub.googleapis.com/v1/projects/krungthai-dg-lending-dev/topics/sample.response
+    subscription: https://pubsub.googleapis.com/v1/projects/krungthai-dg-lending-dev/subscriptions/sample.response.subscription
+    expiry-length: 3600
+    max-message: 1
+    timeout: 5000
+    deadline: 30
+  oauth:
+    url: https://www.googleapis.com/oauth2/v4/token
+    scope: https://www.googleapis.com/auth/cloud-platform
+    audience: https://oauth2.googleapis.com/token
+    grant-type: urn:ietf:params:oauth:grant-type:jwt-bearer

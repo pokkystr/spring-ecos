@@ -19,7 +19,7 @@ public class MyGcpPubPlanetApplication {
 	@Bean
 	@ServiceActivator(inputChannel = "myOutputChannel")
 	public MessageHandler messageSender(PubSubTemplate pubsubTemplate) {
-		return new PubSubMessageHandler(pubsubTemplate, "demo.a");
+		return new PubSubMessageHandler(pubsubTemplate, "demo.sample");
 	}
 
 	@MessagingGateway(defaultRequestChannel = "myOutputChannel")

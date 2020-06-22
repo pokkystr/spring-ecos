@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-pubsub-deployment
+  namespace: dgl
+  labels:
+    app: demo-pubsub-label
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-pubsub-deployment
+  template:
+    metadata:
+      labels:
+        app: demo-pubsub-deployment
+    spec:
+      hostAliases:
+        - ip: "199.36.153.8"
+          hostnames:
+            - "pubsub.googleapis.com"
+      containers:
+        - name: demo-pubsub
+          image: ktbirp81.ktb:5000/digital-lending/pubsub/demo:1.0
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: volumn-application
+              mountPath: /home/application.yaml
+              subPath: application.yaml
+            - name: volumn-sas-application
+              mountPath: /home/krungthai-dg-lending-pubsub.json
+              subPath: krungthai-dg-lending-pubsub.json
+      volumes:
+        - name: volumn-sas-application
+          configMap:
+            name: config-token
+        - name: volumn-application
+          configMap:
+            name: config-application
