@@ -37,7 +37,6 @@ public abstract class PubSubBiding extends RestTemplateBiding {
     private String grantType;
     @Value("${gcp.oauth.scope}")
     private String scope;
-
     @Value("${gcp.pubsub.expiry-length}")
     private int expiryLength;
     @Value("${gcp.oauth.audience}")
