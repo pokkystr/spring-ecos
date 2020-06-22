@@ -3,10 +3,11 @@ logging:
     root: info
 server:
   port: 8081
+
 spring:
   cloud:
     gcp:
       pubsub:
-        enabled: true
+        project-id: poc-hiperledger
         credentials:
-          location: file:/home/krungthai-dg-lending-pubsub.json
+          location: file:/Users/pigke/IdeaProjects/spring-echo/GCP-PubSub/simplePubSub/src/main/resources/poc-hiperledger-002c0d988c4d.json

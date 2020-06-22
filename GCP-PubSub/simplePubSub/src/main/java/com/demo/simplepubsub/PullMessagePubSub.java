@@ -9,12 +9,12 @@ import org.springframework.integration.channel.DirectChannel;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class PullMessagePubSub {
 
     @Bean
     public PubSubInboundChannelAdapter messageChannelAdapter(@Qualifier("myInputChannel") MessageChannel inputChannel, PubSubTemplate pubSubTemplate) {
-        PubSubInboundChannelAdapter adapter = new PubSubInboundChannelAdapter(pubSubTemplate, "sample.response.sub1");
+        PubSubInboundChannelAdapter adapter = new PubSubInboundChannelAdapter(pubSubTemplate, "demo.sample.sub");
         adapter.setOutputChannel(inputChannel);
         return adapter;
     }
