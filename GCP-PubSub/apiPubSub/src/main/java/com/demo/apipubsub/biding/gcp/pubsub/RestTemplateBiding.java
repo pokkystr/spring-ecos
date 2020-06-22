@@ -1,11 +1,7 @@
 package com.demo.apipubsub.biding.gcp.pubsub;
 
-import org.apache.http.conn.ssl.NoopHostnameVerifier;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
-import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
@@ -16,9 +12,9 @@ public abstract class RestTemplateBiding {
     protected RestTemplate initRestTemplate(String accessToken, int timeout) {
         RestTemplate restTemplate = new RestTemplate(createHttpComponentsClientHttpRequestFactory(timeout));
         if (accessToken != null) {
-            restTemplate.getInterceptors().add(getBearerTokenInterceptor(accessToken));
+            restTemplate.getInterceptors().add(bearerTokenInterceptor(accessToken));
         } else {
-            restTemplate.getInterceptors().add(getNoTokenInterceptor());
+            restTemplate.getInterceptors().add(noTokenInterceptor());
         }
         return restTemplate;
     }
@@ -28,17 +24,17 @@ public abstract class RestTemplateBiding {
     }
 
     protected RestTemplate initSSLRestTemplate(String accessToken, int timeout) {
-        RestTemplate restTemplate = new RestTemplate(getClientHttpRequestFactory(timeout));
+        RestTemplate restTemplate = new RestTemplate(clientHttpRequestFactory(timeout));
         if (accessToken != null) {
-            restTemplate.getInterceptors().add(getBearerTokenInterceptor(accessToken));
+            restTemplate.getInterceptors().add(bearerTokenInterceptor(accessToken));
         } else {
-            restTemplate.getInterceptors().add(getNoTokenInterceptor());
+            restTemplate.getInterceptors().add(noTokenInterceptor());
         }
         return restTemplate;
     }
 
     protected RestTemplate initSSLRestTemplate(int timeout) {
-        return new RestTemplate(getClientHttpRequestFactorySSL(timeout));
+        return new RestTemplate(clientHttpRequestFactory(timeout));
     }
 
     protected HttpHeaders initHeader() {
@@ -47,35 +43,24 @@ public abstract class RestTemplateBiding {
         return headers;
     }
 
-    private ClientHttpRequestInterceptor getBearerTokenInterceptor(String accessToken) {
+    private ClientHttpRequestInterceptor bearerTokenInterceptor(String accessToken) {
         return (request, bytes, execution) -> {
             request.getHeaders().add("Authorization", "Bearer " + accessToken);
             return execution.execute(request, bytes);
         };
     }
 
-    private ClientHttpRequestInterceptor getNoTokenInterceptor() {
+    private ClientHttpRequestInterceptor noTokenInterceptor() {
         return (request, bytes, execution) -> {
             throw new IllegalStateException("Can't access because without an access token");
         };
     }
 
-    protected ClientHttpRequestFactory getClientHttpRequestFactory(int timeout) {
-        HttpComponentsClientHttpRequestFactory clientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory();
-        clientHttpRequestFactory.setConnectTimeout(timeout);
-        clientHttpRequestFactory.setHttpClient(getHttpClient());
-        return clientHttpRequestFactory;
-    }
-
-    protected SimpleClientHttpRequestFactory getClientHttpRequestFactorySSL(int timeout) {
+    protected SimpleClientHttpRequestFactory clientHttpRequestFactory(int timeout) {
         SimpleClientHttpRequestFactory clientHttpRequestFactory = new SimpleClientHttpRequestFactory();
         clientHttpRequestFactory.setConnectTimeout(timeout);
         clientHttpRequestFactory.setReadTimeout(timeout);
         return clientHttpRequestFactory;
-    }
-
-    private CloseableHttpClient getHttpClient() {
-        return HttpClients.custom().setSSLHostnameVerifier(new NoopHostnameVerifier()).build();
     }
 
     private HttpComponentsClientHttpRequestFactory createHttpComponentsClientHttpRequestFactory(int timeout) {
