@@ -1,0 +1,7 @@
+cryptography:
+  aes:
+    salt: htjd1js22ihi-=m3
+
+certs:
+  private: file:${PWD}/src/main/resources/key/rsakey.pem
+  public: file:${PWD}/src/main/resources/key/rsakey-pub.pem
