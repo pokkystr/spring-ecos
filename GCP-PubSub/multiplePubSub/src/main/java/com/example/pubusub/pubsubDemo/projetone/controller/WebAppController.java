@@ -1,6 +1,6 @@
-package com.example.pubusub.pubsubDemo.loanapproval.controller;
+package com.example.pubusub.pubsubDemo.projetone.controller;
 
-import com.example.pubusub.pubsubDemo.loanapproval.sender.Project1PubsubOutboundGateway;
+import com.example.pubusub.pubsubDemo.projetone.sender.ProjectOnePubSubOutboundGateway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class WebAppController {
 
     @Autowired
-    private Project1PubsubOutboundGateway project1PubsubOutboundGateway;
+    private ProjectOnePubSubOutboundGateway projectOnePubSubOutboundGateway;
 
     @PostMapping("/publishMessage")
     public ResponseEntity<String> publishMessage(@RequestParam("message") String message) {
         System.out.println(message);
-        project1PubsubOutboundGateway.send(message);
+        projectOnePubSubOutboundGateway.send(message);
         return ResponseEntity.ok("OK");
     }
 }

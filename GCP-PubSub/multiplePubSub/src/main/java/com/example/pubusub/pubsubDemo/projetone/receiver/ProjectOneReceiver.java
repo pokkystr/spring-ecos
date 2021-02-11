@@ -1,4 +1,4 @@
-package com.example.pubusub.pubsubDemo.loanapproval.receiver;
+package com.example.pubusub.pubsubDemo.projetone.receiver;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,8 +10,8 @@ import org.springframework.messaging.MessageHandler;
 import org.springframework.stereotype.Component;
 
 @Component
-public class LoanApprovalReceiver {
-    private static final Logger LOGGER = LoggerFactory.getLogger(LoanApprovalReceiver.class);
+public class ProjectOneReceiver {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ProjectOneReceiver.class);
 
     @Bean("project1_messageReceiver")
     @ServiceActivator(inputChannel = "project1_pubsubInputChannel")

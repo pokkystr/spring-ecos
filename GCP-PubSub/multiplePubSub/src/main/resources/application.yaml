@@ -9,12 +9,12 @@ server:
 
 gcp:
   project-2:
-    topic: sample.response
+    topic: sample.topic
     subscription: sample.response.subscription
-    project-id: krungthai-dg-lending-sit
-    credentialpath: /Users/pigke/Documents/github-demo/pubsubDemo/src/main/resources/krungthai-dg-lending-sit.json
+    project-id: sample-project-one
+    credentialpath: /xxx/service-account.json
   project-1:
-    topic: uat.stream.loan-creditscoring.submission
-    subscription: uat.stream.loan-creditscoring.submission.subscription2
-    project-id: krungthai-dg-lending-sit
-    credentialpath: /Users/pigke/Documents/github-demo/pubsubDemo/src/main/resources/krungthai-dg-lending-sit.json
+    topic: sample.topic
+    subscription: sample.response.subscription
+    project-id: sample-project-two
+    credentialpath: /xxx/service-account.json

@@ -1,4 +1,4 @@
-package com.example.pubusub.pubsubDemo.loanapproval.sender;
+package com.example.pubusub.pubsubDemo.projetone.sender;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,7 +10,7 @@ import org.springframework.messaging.MessageHandler;
 import org.springframework.stereotype.Component;
 
 @Component
-public class LoanApprovalSender {
+public class ProjectOneSender {
 
     @Value("${gcp.project-1.topic}")
     private String topic;

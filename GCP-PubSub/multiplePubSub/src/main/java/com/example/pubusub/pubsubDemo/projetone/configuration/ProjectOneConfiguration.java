@@ -1,6 +1,5 @@
-package com.example.pubusub.pubsubDemo.creditscoring.configuration;
+package com.example.pubusub.pubsubDemo.projetone.configuration;
 
-import com.example.pubusub.pubsubDemo.loanapproval.configuration.LoanApprovalConfiguration;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import org.slf4j.Logger;
@@ -27,20 +26,20 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 
 @Configuration
-public class CreditScoringConfiguration {
-    private static final Logger LOGGER = LoggerFactory.getLogger(LoanApprovalConfiguration.class);
+public class ProjectOneConfiguration {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ProjectOneConfiguration.class);
 
-    @Value("${gcp.project-2.topic}")
+    @Value("${gcp.project-1.topic}")
     private String topic;
-    @Value("${gcp.project-2.credentialpath}")
+    @Value("${gcp.project-1.credentialpath}")
     private String credential;
-    @Value("${gcp.project-2.project-id}")
+    @Value("${gcp.project-1.project-id}")
     private String projectId;
-    @Value("${gcp.project-2.subscription}")
+    @Value("${gcp.project-1.subscription}")
     private String subscription;
 
-    @Bean(name = "project2_IdProvider")
-    public GcpProjectIdProvider project2_IdProvider() {
+    @Bean(name = "project1_IdProvider")
+    public GcpProjectIdProvider project1_IdProvider() {
         return new DefaultGcpProjectIdProvider() {
             @Override
             public String getProjectId() {
@@ -49,8 +48,8 @@ public class CreditScoringConfiguration {
         };
     }
 
-    @Bean(name = "project2_credentialsProvider")
-    public CredentialsProvider project2_credentialsProvider() {
+    @Bean(name = "project1_credentialsProvider")
+    public CredentialsProvider project1_credentialsProvider() {
         return () -> {
             File initialFile = new File(credential);
             InputStream dbAsStream = new FileInputStream(initialFile);
@@ -58,51 +57,51 @@ public class CreditScoringConfiguration {
         };
     }
 
-    @Bean("project2_pubSubSubscriberTemplate")
+    @Bean("project1_pubSubSubscriberTemplate")
     public PubSubSubscriberTemplate pubSubSubscriberTemplate(
-            @Qualifier("project2_subscriberFactory") SubscriberFactory subscriberFactory) {
+            @Qualifier("project1_subscriberFactory") SubscriberFactory subscriberFactory) {
         return new PubSubSubscriberTemplate(subscriberFactory);
     }
 
 
-    @Bean("project2_publisherFactory")
+    @Bean("project1_publisherFactory")
     public DefaultPublisherFactory publisherFactory(
-            @Qualifier("project2_IdProvider") GcpProjectIdProvider projectIdProvider,
-            @Qualifier("project2_credentialsProvider") CredentialsProvider credentialsProvider) {
+            @Qualifier("project1_IdProvider") GcpProjectIdProvider projectIdProvider,
+            @Qualifier("project1_credentialsProvider") CredentialsProvider credentialsProvider) {
         final DefaultPublisherFactory defaultPublisherFactory = new DefaultPublisherFactory(projectIdProvider);
         defaultPublisherFactory.setCredentialsProvider(credentialsProvider);
         return defaultPublisherFactory;
     }
 
-    @Bean("project2_subscriberFactory")
+    @Bean("project1_subscriberFactory")
     public DefaultSubscriberFactory subscriberFactory(
-            @Qualifier("project2_IdProvider") GcpProjectIdProvider projectIdProvider,
-            @Qualifier("project2_credentialsProvider") CredentialsProvider credentialsProvider) {
+            @Qualifier("project1_IdProvider") GcpProjectIdProvider projectIdProvider,
+            @Qualifier("project1_credentialsProvider") CredentialsProvider credentialsProvider) {
         final DefaultSubscriberFactory defaultSubscriberFactory = new DefaultSubscriberFactory(projectIdProvider);
         defaultSubscriberFactory.setCredentialsProvider(credentialsProvider);
         return defaultSubscriberFactory;
     }
 
-    @Bean(name = "project2_pubsubInputChannel")
+    @Bean(name = "project1_pubsubInputChannel")
     public MessageChannel pubsubInputChannel() {
         return new DirectChannel();
     }
 
-    @Bean(name = "project2_pubSubTemplate")
-    public PubSubTemplate project2_PubSubTemplate(
-            @Qualifier("project2_publisherFactory") PublisherFactory publisherFactory,
-            @Qualifier("project2_subscriberFactory") SubscriberFactory subscriberFactory,
-            @Qualifier("project2_credentialsProvider") CredentialsProvider credentialsProvider) {
+    @Bean(name = "project1_pubSubTemplate")
+    public PubSubTemplate project1_PubSubTemplate(
+            @Qualifier("project1_publisherFactory") PublisherFactory publisherFactory,
+            @Qualifier("project1_subscriberFactory") SubscriberFactory subscriberFactory,
+            @Qualifier("project1_credentialsProvider") CredentialsProvider credentialsProvider) {
         if (publisherFactory instanceof DefaultPublisherFactory) {
             ((DefaultPublisherFactory) publisherFactory).setCredentialsProvider(credentialsProvider);
         }
         return new PubSubTemplate(publisherFactory, subscriberFactory);
     }
 
-    @Bean(name = "project2_messageChannelAdapter")
+    @Bean(name = "project1_messageChannelAdapter")
     public PubSubInboundChannelAdapter messageChannelAdapter(
-            @Qualifier("project2_pubsubInputChannel") MessageChannel inputChannel,
-            @Qualifier("project2_pubSubTemplate") PubSubTemplate pubSubTemplate) {
+            @Qualifier("project1_pubsubInputChannel") MessageChannel inputChannel,
+            @Qualifier("project1_pubSubTemplate") PubSubTemplate pubSubTemplate) {
 
         PubSubInboundChannelAdapter adapter = new PubSubInboundChannelAdapter(pubSubTemplate, subscription);
         adapter.setOutputChannel(inputChannel);

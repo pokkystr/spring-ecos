@@ -10,7 +10,7 @@ import org.springframework.messaging.MessageHandler;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CreditScoringSender {
+public class ProjectTwoSender {
 
     @Value("${gcp.project-2.topic}")
     private String topic;

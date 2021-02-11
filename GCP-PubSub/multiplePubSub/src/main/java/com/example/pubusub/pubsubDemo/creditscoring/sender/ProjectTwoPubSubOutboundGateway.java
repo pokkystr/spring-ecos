@@ -5,6 +5,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 @MessagingGateway(defaultRequestChannel = "project2_pubsubOutputChannel")
-public interface Project2PubsubOutboundGateway {
+public interface ProjectTwoPubSubOutboundGateway {
     void send(String message);
 }
