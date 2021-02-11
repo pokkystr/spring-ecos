@@ -1,4 +1,4 @@
-package com.example.pubusub.pubsubDemo.creditscoring.receiver;
+package com.example.pubusub.pubsubDemo.projecttwo.receiver;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

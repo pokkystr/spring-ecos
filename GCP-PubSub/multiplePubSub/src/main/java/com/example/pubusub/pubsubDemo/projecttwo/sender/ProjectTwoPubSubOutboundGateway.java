@@ -1,4 +1,4 @@
-package com.example.pubusub.pubsubDemo.creditscoring.sender;
+package com.example.pubusub.pubsubDemo.projecttwo.sender;
 
 import org.springframework.integration.annotation.MessagingGateway;
 import org.springframework.stereotype.Service;

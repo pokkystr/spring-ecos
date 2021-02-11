@@ -27,7 +27,6 @@ import java.io.InputStream;
 
 @Configuration
 public class ProjectOneConfiguration {
-    private static final Logger LOGGER = LoggerFactory.getLogger(ProjectOneConfiguration.class);
 
     @Value("${gcp.project-1.topic}")
     private String topic;
@@ -63,7 +62,6 @@ public class ProjectOneConfiguration {
         return new PubSubSubscriberTemplate(subscriberFactory);
     }
 
-
     @Bean("project1_publisherFactory")
     public DefaultPublisherFactory publisherFactory(
             @Qualifier("project1_IdProvider") GcpProjectIdProvider projectIdProvider,
@@ -93,7 +91,7 @@ public class ProjectOneConfiguration {
             @Qualifier("project1_subscriberFactory") SubscriberFactory subscriberFactory,
             @Qualifier("project1_credentialsProvider") CredentialsProvider credentialsProvider) {
         if (publisherFactory instanceof DefaultPublisherFactory) {
-            ((DefaultPublisherFactory) publisherFactory).setCredentialsProvider(credentialsProvider);
+            ( (DefaultPublisherFactory) publisherFactory ).setCredentialsProvider(credentialsProvider);
         }
         return new PubSubTemplate(publisherFactory, subscriberFactory);
     }
@@ -105,7 +103,7 @@ public class ProjectOneConfiguration {
 
         PubSubInboundChannelAdapter adapter = new PubSubInboundChannelAdapter(pubSubTemplate, subscription);
         adapter.setOutputChannel(inputChannel);
-        adapter.setAckMode(AckMode.MANUAL);
+        adapter.setAckMode(AckMode.AUTO);
         /**you can user auto*/
         return adapter;
     }
