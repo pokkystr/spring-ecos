@@ -17,31 +17,31 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 @Configuration
-public class RedisDemoOneConfiguration {
+public class RedisDemoTwoConfiguration {
 
     private final StringRedisSerializer stringRedisSerializer;
     private final HashRedisSerializer hashRedisSerializer;
 
-    @Value("${redis.redis-demo-one.host}")
+    @Value("${redis.redis-demo-two.host}")
     private String host;
-    @Value("${redis.redis-demo-one.port}")
+    @Value("${redis.redis-demo-two.port}")
     private int port;
-    @Value("${redis.redis-demo-one.lettuce.pool.max-active}")
+    @Value("${redis.redis-demo-two.lettuce.pool.max-active}")
     private int maxActive;
-    @Value("${redis.redis-demo-one.lettuce.pool.max-idle}")
+    @Value("${redis.redis-demo-two.lettuce.pool.max-idle}")
     private int maxIdle;
-    @Value("${redis.redis-demo-one.lettuce.pool.min-idle}")
+    @Value("${redis.redis-demo-two.lettuce.pool.min-idle}")
     private int minIdle;
-    @Value("${redis.redis-demo-one.lettuce.pool.max-wait}")
+    @Value("${redis.redis-demo-two.lettuce.pool.max-wait}")
     private int maxWait;
 
-    public RedisDemoOneConfiguration() {
+    public RedisDemoTwoConfiguration() {
         stringRedisSerializer = new StringRedisSerializer();
         hashRedisSerializer = new HashRedisSerializer();
     }
 
-    @Bean("demoOneRedisTemplate")
-    RedisTemplate<String, Object> redisTemplate(@Qualifier("demoOneConnectionFactory") RedisConnectionFactory rcf) {
+    @Bean("demoTwoRedisTemplate")
+    RedisTemplate<String, Object> redisTemplate(@Qualifier("demoTwoConnectionFactory") RedisConnectionFactory rcf) {
         RedisTemplate<String, Object> template = new RedisTemplate<>();
         template.setConnectionFactory(rcf);
         template.setKeySerializer(stringRedisSerializer);
@@ -53,10 +53,10 @@ public class RedisDemoOneConfiguration {
     }
 
     @SuppressWarnings("rawtypes")
-    @Bean("demoOneConnectionFactory")
+    @Bean("demoTwoConnectionFactory")
     public RedisConnectionFactory connectionFactory(
-            @Qualifier("demoOneRedisStandaloneConfiguration") RedisStandaloneConfiguration redisStandaloneConfiguration,
-            @Qualifier("demoOneRedisPool") GenericObjectPoolConfig pool) {
+            @Qualifier("demoTwoRedisStandaloneConfiguration") RedisStandaloneConfiguration redisStandaloneConfiguration,
+            @Qualifier("demoTwoRedisPool") GenericObjectPoolConfig pool) {
         LettuceClientConfiguration clientConfig = LettucePoolingClientConfiguration.builder().poolConfig(pool).build();
         LettuceConnectionFactory factory = new LettuceConnectionFactory(redisStandaloneConfiguration, clientConfig);
         factory.setShareNativeConnection(false);
@@ -64,7 +64,7 @@ public class RedisDemoOneConfiguration {
     }
 
     @SuppressWarnings("rawtypes")
-    @Bean("demoOneRedisPool")
+    @Bean("demoTwoRedisPool")
     GenericObjectPoolConfig createGenericPool() {
         GenericObjectPoolConfig genericObjectPoolConfig = new GenericObjectPoolConfig();
         genericObjectPoolConfig.setMaxIdle(maxIdle);
@@ -74,7 +74,7 @@ public class RedisDemoOneConfiguration {
         return genericObjectPoolConfig;
     }
 
-    @Bean("demoOneRedisStandaloneConfiguration")
+    @Bean("demoTwoRedisStandaloneConfiguration")
     RedisStandaloneConfiguration redisStandaloneConfiguration() {
         return new RedisStandaloneConfiguration(host, port);
     }
