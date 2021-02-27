@@ -19,8 +19,12 @@ public class LoanApprovalReceiver {
         return message -> {
             LOGGER.info("Message headers {}", message.getHeaders());
             LOGGER.info("Message arrived! Payload: " + new String((byte[]) message.getPayload()));
-            BasicAcknowledgeablePubsubMessage originalMessage = message.getHeaders().get(GcpPubSubHeaders.ORIGINAL_MESSAGE, BasicAcknowledgeablePubsubMessage.class);
+
+            BasicAcknowledgeablePubsubMessage originalMessage =
+                    message.getHeaders()
+                            .get(GcpPubSubHeaders.ORIGINAL_MESSAGE, BasicAcknowledgeablePubsubMessage.class);
             originalMessage.ack();
+
             /** if bussice case un success
              * set originalMessage.nack(); */
         };
