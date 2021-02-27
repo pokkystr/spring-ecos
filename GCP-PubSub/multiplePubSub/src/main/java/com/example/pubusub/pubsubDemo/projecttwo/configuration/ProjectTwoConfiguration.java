@@ -1,10 +1,7 @@
-package com.example.pubusub.pubsubDemo.creditscoring.configuration;
+package com.example.pubusub.pubsubDemo.projecttwo.configuration;
 
-import com.example.pubusub.pubsubDemo.loanapproval.configuration.LoanApprovalConfiguration;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.auth.oauth2.ServiceAccountCredentials;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.gcp.core.DefaultGcpProjectIdProvider;
@@ -27,8 +24,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 
 @Configuration
-public class CreditScoringConfiguration {
-    private static final Logger LOGGER = LoggerFactory.getLogger(LoanApprovalConfiguration.class);
+public class ProjectTwoConfiguration {
 
     @Value("${gcp.project-2.topic}")
     private String topic;
@@ -94,7 +90,7 @@ public class CreditScoringConfiguration {
             @Qualifier("project2_subscriberFactory") SubscriberFactory subscriberFactory,
             @Qualifier("project2_credentialsProvider") CredentialsProvider credentialsProvider) {
         if (publisherFactory instanceof DefaultPublisherFactory) {
-            ((DefaultPublisherFactory) publisherFactory).setCredentialsProvider(credentialsProvider);
+            ( (DefaultPublisherFactory) publisherFactory ).setCredentialsProvider(credentialsProvider);
         }
         return new PubSubTemplate(publisherFactory, subscriberFactory);
     }
@@ -106,7 +102,7 @@ public class CreditScoringConfiguration {
 
         PubSubInboundChannelAdapter adapter = new PubSubInboundChannelAdapter(pubSubTemplate, subscription);
         adapter.setOutputChannel(inputChannel);
-        adapter.setAckMode(AckMode.MANUAL);
+        adapter.setAckMode(AckMode.AUTO);
         /**you can user auto*/
         return adapter;
     }

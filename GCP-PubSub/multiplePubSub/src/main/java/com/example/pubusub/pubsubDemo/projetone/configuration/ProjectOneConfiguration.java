@@ -1,4 +1,4 @@
-package com.example.pubusub.pubsubDemo.loanapproval.configuration;
+package com.example.pubusub.pubsubDemo.projetone.configuration;
 
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.auth.oauth2.ServiceAccountCredentials;
@@ -26,8 +26,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 
 @Configuration
-public class LoanApprovalConfiguration {
-    private static final Logger LOGGER = LoggerFactory.getLogger(LoanApprovalConfiguration.class);
+public class ProjectOneConfiguration {
 
     @Value("${gcp.project-1.topic}")
     private String topic;
@@ -63,7 +62,6 @@ public class LoanApprovalConfiguration {
         return new PubSubSubscriberTemplate(subscriberFactory);
     }
 
-
     @Bean("project1_publisherFactory")
     public DefaultPublisherFactory publisherFactory(
             @Qualifier("project1_IdProvider") GcpProjectIdProvider projectIdProvider,
@@ -93,7 +91,7 @@ public class LoanApprovalConfiguration {
             @Qualifier("project1_subscriberFactory") SubscriberFactory subscriberFactory,
             @Qualifier("project1_credentialsProvider") CredentialsProvider credentialsProvider) {
         if (publisherFactory instanceof DefaultPublisherFactory) {
-            ((DefaultPublisherFactory) publisherFactory).setCredentialsProvider(credentialsProvider);
+            ( (DefaultPublisherFactory) publisherFactory ).setCredentialsProvider(credentialsProvider);
         }
         return new PubSubTemplate(publisherFactory, subscriberFactory);
     }
@@ -105,7 +103,7 @@ public class LoanApprovalConfiguration {
 
         PubSubInboundChannelAdapter adapter = new PubSubInboundChannelAdapter(pubSubTemplate, subscription);
         adapter.setOutputChannel(inputChannel);
-        adapter.setAckMode(AckMode.MANUAL);
+        adapter.setAckMode(AckMode.AUTO);
         /**you can user auto*/
         return adapter;
     }

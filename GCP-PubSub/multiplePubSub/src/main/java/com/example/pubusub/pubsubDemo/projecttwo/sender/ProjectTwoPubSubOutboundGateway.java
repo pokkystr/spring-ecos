@@ -1,10 +1,10 @@
-package com.example.pubusub.pubsubDemo.creditscoring.sender;
+package com.example.pubusub.pubsubDemo.projecttwo.sender;
 
 import org.springframework.integration.annotation.MessagingGateway;
 import org.springframework.stereotype.Service;
 
 @Service
 @MessagingGateway(defaultRequestChannel = "project2_pubsubOutputChannel")
-public interface Project2PubsubOutboundGateway {
+public interface ProjectTwoPubSubOutboundGateway {
     void send(String message);
 }
