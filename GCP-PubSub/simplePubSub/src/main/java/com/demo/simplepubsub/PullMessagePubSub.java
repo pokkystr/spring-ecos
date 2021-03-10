@@ -19,7 +19,7 @@ public class PullMessagePubSub {
         return adapter;
     }
 
-    @Bean
+    @Bean("myInputChannel")
     public MessageChannel myInputChannel() {
         return new DirectChannel();
     }
