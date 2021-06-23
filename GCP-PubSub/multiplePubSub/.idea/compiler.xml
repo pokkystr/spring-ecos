@@ -7,15 +7,21 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="pubsubDemo" />
+        <module name="pubsub-one" />
+        <module name="simplePubSub" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="pubsub-one" target="1.8" />
       <module name="pubsubDemo" target="11" />
+      <module name="simplePubSub" target="12" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="pubsub-one" options="-parameters" />
       <module name="pubsubDemo" options="-parameters" />
+      <module name="simplePubSub" options="-parameters" />
     </option>
   </component>
 </project>

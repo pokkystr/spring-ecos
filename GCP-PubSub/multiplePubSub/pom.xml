@@ -58,8 +58,13 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-gcp-autoconfigure</artifactId>
 		</dependency>
-	</dependencies>
 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-messaging</artifactId>
+			<version>5.3.8</version>
+		</dependency>
+	</dependencies>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>

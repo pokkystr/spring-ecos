@@ -8,7 +8,6 @@ import org.springframework.cloud.gcp.pubsub.integration.outbound.PubSubMessageHa
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
 import org.springframework.integration.annotation.ServiceActivator;
-import org.springframework.messaging.MessageHandler;
 import org.springframework.stereotype.Component;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 
@@ -22,7 +21,7 @@ public class ProjectTwoSender {
     @Primary
     @Bean("project2_messageSender")
     @ServiceActivator(inputChannel = "project2_pubsubOutputChannel")
-    public MessageHandler messageSender(@Qualifier("project1_pubSubTemplate") PubSubTemplate pubsubTemplate) {
+    public void messageSender(@Qualifier("project1_pubSubTemplate") PubSubTemplate pubsubTemplate) {
         PubSubMessageHandler adapter = new PubSubMessageHandler(pubsubTemplate, topic);
         adapter.setPublishCallback(new ListenableFutureCallback<>() {
             @Override
@@ -35,7 +34,5 @@ public class ProjectTwoSender {
                 log.debug("{} Message was sent successfully.", topic);
             }
         });
-
-        return adapter;
     }
 }

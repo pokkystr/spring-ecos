@@ -6,27 +6,27 @@ import org.springframework.cloud.gcp.pubsub.support.BasicAcknowledgeablePubsubMe
 import org.springframework.cloud.gcp.pubsub.support.GcpPubSubHeaders;
 import org.springframework.context.annotation.Bean;
 import org.springframework.integration.annotation.ServiceActivator;
-import org.springframework.messaging.MessageHandler;
+
 import org.springframework.stereotype.Component;
 
 @Component
 public class ProjectOneReceiver {
     private static final Logger LOGGER = LoggerFactory.getLogger(ProjectOneReceiver.class);
 
-    @Bean("project1_messageReceiver")
-    @ServiceActivator(inputChannel = "project1_pubsubInputChannel")
-    public MessageHandler messageReceiver() {
-        return message -> {
-            LOGGER.info("Message headers {}", message.getHeaders());
-            LOGGER.info("Message arrived! Payload: " + new String((byte[]) message.getPayload()));
-
-            BasicAcknowledgeablePubsubMessage originalMessage =
-                    message.getHeaders()
-                            .get(GcpPubSubHeaders.ORIGINAL_MESSAGE, BasicAcknowledgeablePubsubMessage.class);
-            originalMessage.ack();
-
-            /** if bussice case un success
-             * set originalMessage.nack(); */
-        };
-    }
+//    @Bean("project1_messageReceiver")
+//    @ServiceActivator(inputChannel = "project1_pubsubInputChannel")
+//    public MessageHandler messageReceiver() {
+//        return message -> {
+//            LOGGER.info("Message headers {}", message.getHeaders());
+//            LOGGER.info("Message arrived! Payload: " + new String((byte[]) message.getPayload()));
+//
+//            BasicAcknowledgeablePubsubMessage originalMessage =
+//                    message.getHeaders()
+//                            .get(GcpPubSubHeaders.ORIGINAL_MESSAGE, BasicAcknowledgeablePubsubMessage.class);
+//            originalMessage.ack();
+//
+//            /** if bussice case un success
+//             * set originalMessage.nack(); */
+//        };
+//    }
 }
