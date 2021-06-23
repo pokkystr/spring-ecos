@@ -1,5 +1,6 @@
 package com.demo.simplepubsub;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.gcp.pubsub.core.PubSubTemplate;
@@ -16,10 +17,13 @@ public class MyGcpPubPlanetApplication {
 		SpringApplication.run(MyGcpPubPlanetApplication.class, args);
 	}
 
+	@Value("${config.topic}")
+	private String topic;
+
 	@Bean
 	@ServiceActivator(inputChannel = "myOutputChannel")
 	public MessageHandler messageSender(PubSubTemplate pubsubTemplate) {
-		return new PubSubMessageHandler(pubsubTemplate, "demo.sample");
+		return new PubSubMessageHandler(pubsubTemplate, topic);
 	}
 
 	@MessagingGateway(defaultRequestChannel = "myOutputChannel")

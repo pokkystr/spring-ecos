@@ -1,2 +1,4 @@
-package com.security.jwt;public class OAuth2Config {
+package com.security.jwt;
+
+public class OAuth2Config extends AuthorizationServerConfigure{
 }
