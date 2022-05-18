@@ -11,7 +11,7 @@ import java.io.IOException;
 public class Listener {
     private static final Logger logger = LogManager.getFormatterLogger(Listener.class);
 
-    @KafkaListener(topics = "pigke.message", groupId = "demo1", concurrency = "5")
+    @KafkaListener(topics = "demo.1", groupId = "demo1", concurrency = "1")
     public void consume(String message) throws IOException {
         logger.info("Consume Message: %s", message);
     }
