@@ -1,0 +1,7 @@
+spring:
+  elasticsearch:
+    rest:
+      read-timeout: 60s
+      connection-timeout: 30s
+      uris:
+        - localhost:9200

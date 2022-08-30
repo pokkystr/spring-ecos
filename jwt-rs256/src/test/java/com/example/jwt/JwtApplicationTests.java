@@ -35,7 +35,7 @@ class JwtApplicationTests {
         System.out.println("TOKEN:");
         System.out.println(token);
 
-        token = token.split("\\.")[0]+".eyJhZ2UiOjMwLCJuYW1lIjoiZHJlYW0iLCJhZG1pbiI6dHJ1ZX0."+token.split("\\.")[2];
+//        token = token.split("\\.")[0]+".eyJhZ2UiOjMwLCJuYW1lIjoiZHJlYW0iLCJhZG1pbiI6dHJ1ZX0."+token.split("\\.")[2];
         printStructure(token, publicKey);
     }
 
