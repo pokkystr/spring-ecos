@@ -5,4 +5,4 @@ spring:
   main:
     web-application-type: NONE
 
-contab: "0 0/1 * ? * *"
+contab: "* 0/1 * ? * *"
